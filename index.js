@@ -13,7 +13,7 @@ const render = data => {
     .range([0, width]);
   
   const yScale = d3.scaleBand()
-    .domain([data.map(yValue)])
+    .domain(data.map(yValue))
     .range([0, height]);
   
     //console.log(yScale.domain());
