@@ -10,11 +10,6 @@ svg{
   border: 1px solid #635F5D;
 }
 
-rect{
-  fill: steelblue;
-  color: red;
-}
-
 text{
   font-family: sans-serif;
 }
