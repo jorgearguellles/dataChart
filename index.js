@@ -4,9 +4,9 @@ const width = +svg.attr("width");
 const height = +svg.attr("height");
 
 const render = data => {
-  const xValue = d => d.utilizacion;
+  const xValue = d => +d.utilizacion.toFixed(2);
   const yValue = d => unixTimeToHumanTime(d.timestamp);
-  const margin = {top: 50, right:40, left:340, bottom:30};
+  const margin = {top: 80, right:20, left:250, bottom:80};
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
@@ -25,22 +25,35 @@ const render = data => {
 
   g.append("g")
     .call(d3.axisLeft(yScale))
-    .selectAll(".domain")
+    .select(".domain")
       .remove();
 
-  g.append("g")
-    .call(d3.axisBottom(xScale))
+  const xAxisG = g.append("g")
+    .call(d3.axisBottom(xScale).tickSize(-innerHeight))
     .attr("transform", `translate(0, ${innerHeight})`);
 
-  g.selectAll("rect").data(data)
-    .enter().append("rect")
+  //xAxisG.select(".domain").remove();
+  
+  xAxisG.append("text")
+    .attr("class", "axis-label")
+    .attr("y", 35)
+    .attr("x", innerWidth / 2)
+    .attr("fill", "black")
+    .text("% De utilización");
+
+  g.selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
       .attr("y", d => yScale(yValue(d)))
       .attr("width", d => xScale(xValue(d)))
       .attr("height", yScale.bandwidth());
 
   g.append("text")
+    .attr("class", "title")
     .attr("y", -15)
-    .text("% De utilización de maquina por día")
+    .text("% de Utilización de maquina VS día del año");
+
 };
 
 d3.csv("./data/dataGenial.csv").then(data => {
@@ -54,6 +67,10 @@ d3.csv("./data/dataGenial.csv").then(data => {
 function unixTimeToHumanTime(timestamp){
   const milliseconds = timestamp * 1000 
   const dateObject = new Date(milliseconds)
-  const humanDateFormat = dateObject.toLocaleString("es", {weekday: "long", month: "long", day: "numeric",year: "numeric"}) //"domingo, 30 de enero de 53442"
+  const humanDateFormat = dateObject.toLocaleString("es", 
+  {weekday: "long",
+  month: "long", 
+  day: "numeric",
+  year: "numeric"}) //"domingo, 30 de enero de 53442"
   return humanDateFormat
 }
