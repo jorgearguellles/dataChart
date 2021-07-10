@@ -34,7 +34,7 @@ const render = data => {
       .attr("height", yScale.bandwidth());
 };
 
-d3.csv("dataGenial.csv").then(data => {
+d3.csv("./data/dataGenial.csv").then(data => {
   data.forEach(d => {
     d.utilizacion = +d.utilizacion;
   });
