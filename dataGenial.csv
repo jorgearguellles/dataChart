@@ -1,4 +1,4 @@
-timestamp,utilizacion_turno_porcentual,context_utilizacion-turno,date
+timestamp,utilizacion,context_utilizacion-turno,date
 1624302000000,16.59923611,{},2021-06-21 14:00:00-05:00
 1624273200000,53.49888889,{},2021-06-21 06:00:00-05:00
 1624129200000,41.22114583,{},2021-06-19 14:00:00-05:00

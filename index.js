@@ -1,54 +1,41 @@
+const svg = d3.select("svg");
 
+const width = +svg.attr("width");
+const height = +svg.attr("height");
 
-function unixTimeToWeekDay(dt) {
-	const unixTimestamp = dt;
-	const milliseconds = unixTimestamp * 1000;
-	const dateObject = new Date(milliseconds);
-  let day = dateObject.toLocaleString("es", { weekday: "long", day: "numeric", month: "long" });
-  return day;
-}
+const render = data => {
 
-function unixTimeToNumberDay(dt) {
-	const unixTimestamp = dt;
-	const milliseconds = unixTimestamp * 1000;
-	const dateObject = new Date(milliseconds);
-  let day = dateObject.toLocaleString("es", { day: "numeric"});
-  return day;
-}
+  const xValue = d => d.utilizacion;
+  const yValue = d => unixTimeToHumanTime(d.timestamp);
 
-console.log("Number day:",unixTimeToNumberDay(1624302000000));
-
-function unixTimeToHour(dt) {
-	const unixTimestamp = dt;
-	const milliseconds = unixTimestamp * 1000;
-	const dateObject = new Date(milliseconds);
-  let hourMinutes = dateObject.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
+  const xScale = d3.scaleLinear()
+    .domain([0, d3.max(data, xValue)])
+    .range([0, width]);
   
-	return hourMinutes;
-}
-
-
-console.log("Hour:",unixTimeToHour(1624273200000));
-
-
-function unixTimeToHuman(dt) {
-	const unixTimestamp = dt;
-	const milliseconds = unixTimestamp * 1000;
-	const dateObject = new Date(milliseconds);
-  let shortTime = dateObject.toLocaleString("en-US", {timeZoneName: "short"})
+  const yScale = d3.scaleBand()
+    .domain([data.map(yValue)])
+    .range([0, height]);
   
-	return shortTime;
+    //console.log(yScale.domain());
+
+  svg.selectAll("rect").data(data)
+    .enter().append("rect")
+      .attr("y", d => yScale(yValue(d)))
+      .attr("width", d => xScale(xValue(d)))
+      .attr("height", yScale.bandwidth());
+};
+
+d3.csv("dataGenial.csv").then(data => {
+  data.forEach(d => {
+    d.utilizacion = +d.utilizacion;
+  });
+  render(data);
+});
+
+
+function unixTimeToHumanTime(timestamp){
+  const milliseconds = timestamp * 1000 
+  const dateObject = new Date(milliseconds)
+  const humanDateFormat = dateObject.toLocaleString("es", {weekday: "long", month: "long", day: "numeric",year: "numeric"}) //"domingo, 30 de enero de 53442"
+  return humanDateFormat
 }
-
-console.log("Human Friendly:",unixTimeToHuman(1624273200000));
-
-
-function unixTimeToHumanF(dt) {
-	const unixTimestamp = dt;
-	const milliseconds = unixTimestamp * 1000;
-	const dateObject = new Date(milliseconds);
-  const humanDateFormat = dateObject.toLocaleString()
-  
-	return humanDateFormat;
-}
-
