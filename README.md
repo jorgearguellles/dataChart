@@ -28,7 +28,7 @@ Esta hecha con :green_heart: y:
   
 ## Vista previa
 
-![App Screenshot](https://github.com/jorgearguellles/weatherApp/blob/main/src/img/previewPAge.png)
+![App Screenshot](https://github.com/jorgearguellles/dataChart/blob/main/img/screenShot.png)
 
  
  ## Retroalimentación
