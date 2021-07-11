@@ -18,7 +18,7 @@ Esta hecha con :green_heart: y:
 * [Hecho con JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 * [Gráfico realizado con la librería D3.js](https://d3js.org)
 * Datos de estáticos de un archivo .csv 
-* [Desplegada con GitHub-Pages](https://aws.amazon.com)
+* [Desplegada con GitHub-Pages](https://pages.github.com)
 
   
 ## Demo
