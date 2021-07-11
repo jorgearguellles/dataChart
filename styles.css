@@ -21,7 +21,7 @@ text{
 
 .axis-label{
   font-size: 2em;
-  fill: #8E8883;
+  /* fill: #8E8883; */
 }
 
 .title{
@@ -33,4 +33,17 @@ text{
 .info{
   font-size: 1em;
   fill: black;
+}
+
+.barData{
+  font-size: 0.75rem;
+  fill:white;
+}
+
+.barData_out{
+  font-size: 0.75rem;
+}
+
+.min, .max{
+  font-size: 0.7rem;
 }
