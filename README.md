@@ -23,7 +23,7 @@ Esta hecha con :green_heart: y:
   
 ## Demo
 
-[Pruébala](https://main.d32onoc11tul47.amplifyapp.com)
+[Ojeala](https://jorgearguellles.github.io/dataChart/)
 
   
 ## Vista previa
