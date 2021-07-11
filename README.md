@@ -16,7 +16,7 @@ Esta hecha con :green_heart: y:
 * [Estructura con HTML](https://developer.mozilla.org/es/docs/Web/HTML)
 * [Estilos con CSS](https://developer.mozilla.org/es/docs/Web/CSS)
 * [Hecho con JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-* [Diagrama realizdo con la librería D3.js](https://d3js.org)
+* [Gráfico realizado con la librería D3.js](https://d3js.org)
 * Datos de estáticos de un archivo .csv 
 * [Desplegada con GitHub-Pages](https://aws.amazon.com)
 
