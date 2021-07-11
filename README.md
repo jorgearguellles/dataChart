@@ -1,7 +1,7 @@
 
 # dataChart
 
-Es un ejercicios para hacer un gráfico usando la librearía D3.js con datos traidos desde un archivo .csv
+Ejercicio para realizar un gráfico usando JavaScript Vanilla más la librearía D3.js. Con datos estáticos provenientes de un archivos.csv
 
 ## Autor
 
