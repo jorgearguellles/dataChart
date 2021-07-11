@@ -1,7 +1,7 @@
 
 # dataChart
 
-Es un ejercicios para hacer un gráfico usando la librearía D3.js con datos traidos desde un archivo .csv
+Ejercicio para realizar un gráfico usando JavaScript Vanilla más la librearía D3.js. Con datos estáticos provenientes de un archivos.csv
 
 ## Autor
 
@@ -16,19 +16,19 @@ Esta hecha con :green_heart: y:
 * [Estructura con HTML](https://developer.mozilla.org/es/docs/Web/HTML)
 * [Estilos con CSS](https://developer.mozilla.org/es/docs/Web/CSS)
 * [Hecho con JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-* [Diagrama realizdo con la librería D3.js](https://d3js.org)
+* [Gráfico realizado con la librería D3.js](https://d3js.org)
 * Datos de estáticos de un archivo .csv 
-* [Desplegada con GitHub-Pages](https://aws.amazon.com)
+* [Desplegada con GitHub-Pages](https://pages.github.com)
 
   
 ## Demo
 
-[Pruébala](https://main.d32onoc11tul47.amplifyapp.com)
+[Ojeala](https://jorgearguellles.github.io/dataChart/)
 
   
 ## Vista previa
 
-![App Screenshot](https://github.com/jorgearguellles/weatherApp/blob/main/src/img/previewPAge.png)
+![App Screenshot](https://github.com/jorgearguellles/dataChart/blob/main/img/screenShot.png)
 
  
  ## Retroalimentación
